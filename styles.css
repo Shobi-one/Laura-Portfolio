@@ -159,6 +159,14 @@ main {
   margin-bottom: var(--space-4xl);
 }
 
+.category-intro {
+  max-width: 70ch;
+  margin: 0.5rem 0 1.1rem;
+  color: var(--muted);
+  font-size: 0.94rem;
+  line-height: 1.7;
+}
+
 .about-page {
   margin: var(--space-2xl) 0 2.8rem;
   max-width: 76ch;
@@ -296,18 +304,50 @@ main {
   text-underline-offset: 0.2em;
 }
 
+.subcategory-block {
+  margin-bottom: 1.55rem;
+}
+
+.subcategory-block:last-child {
+  margin-bottom: 0;
+}
+
+.subcategory-title {
+  margin: 0 0 0.66rem;
+  font-family: "Cormorant Infant", serif;
+  font-size: clamp(1.1rem, 2.2vw, 1.45rem);
+  font-weight: 600;
+  color: var(--ink);
+}
+
 .category-grid {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 0.86rem;
+  column-count: 4;
+  column-gap: 0.86rem;
 }
 
 .category-grid .tile {
+  break-inside: avoid;
+  margin: 0 0 0.86rem;
   overflow: hidden;
+  border: 1px solid var(--border-soft);
+  border-radius: 6px;
+  background: var(--surface);
 }
 
 .category-grid .tile img {
-  aspect-ratio: 4 / 5;
+  width: 100%;
+  height: auto;
+  aspect-ratio: auto;
+  object-fit: contain;
+  filter: saturate(0.96) contrast(1.02);
+}
+
+.category-grid figcaption {
+  padding: 0.45rem 0.52rem 0.5rem;
+  font-size: 0.68rem;
+  letter-spacing: 0.05em;
+  text-transform: lowercase;
+  color: var(--caption-ink);
 }
 
 .gallery-heading {
@@ -398,7 +438,7 @@ footer {
   }
 
   .category-grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    column-count: 3;
   }
 }
 
@@ -429,8 +469,12 @@ footer {
   }
 
   .category-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 0.68rem;
+    column-count: 2;
+    column-gap: 0.68rem;
+  }
+
+  .subcategory-block {
+    margin-bottom: 1.2rem;
   }
 
   .hero img {
@@ -448,6 +492,6 @@ footer {
   }
 
   .category-grid {
-    grid-template-columns: 1fr;
+    column-count: 1;
   }
 }
