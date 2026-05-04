@@ -117,6 +117,33 @@ body {
   color: var(--ink);
 }
 
+.language-toggle {
+  background: none;
+  border: 1px solid var(--border-soft);
+  color: var(--muted);
+  font-size: 0.75rem;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  padding: var(--space-2xs) var(--space-md);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all var(--dur-fast) ease;
+  font-family: "Manrope", sans-serif;
+  font-weight: 500;
+}
+
+.language-toggle:hover {
+  color: var(--ink);
+  border-color: var(--border-focus);
+  background: var(--button-bg);
+}
+
+.language-toggle:focus {
+  outline: none;
+  ring: 2px var(--focus-ring);
+  box-shadow: 0 0 0 2px var(--focus-ring);
+}
+
 main {
   width: min(var(--layout-max-width), var(--layout-fluid-width));
   margin: 0 auto;
