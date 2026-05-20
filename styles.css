@@ -192,7 +192,7 @@ html.has-custom-cursor .back-link {
 
 .language-toggle:focus {
   outline: none;
-  ring: 2px var(--focus-ring);
+  outline: 2px solid var(--focus-ring);
   box-shadow: 0 0 0 2px var(--focus-ring);
 }
 
@@ -247,7 +247,45 @@ main {
 
 .about-page {
   margin: var(--space-2xl) 0 2.8rem;
-  max-width: 76ch;
+  max-width: 1000px;
+}
+
+.about-flex {
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  gap: 5rem;
+}
+
+.about-texts {
+  flex: 3 1 0%;
+  min-width: 0;
+}
+
+.about-doodle-wrap {
+  flex: 1.5 1 0%;
+  min-width: 350px;
+}
+
+.about-doodle {
+  width: 100%;
+  height: 100%;;
+  object-fit: cover;
+  border-radius: 20px;
+  display: block;
+}
+
+@media (max-width: 900px) {
+  .about-flex {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .about-doodle {
+    height: auto;
+    width: 100%;
+    flex: 0 0 auto;
+  }
 }
 
 .contact-page {
@@ -799,6 +837,36 @@ footer.site-footer img {
   .subcategory-block {
     margin-bottom: 1.2rem;
   }
+
+  .hero img {
+    height: clamp(210px, 46vw, 300px);
+  }
+
+  .contact-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .book-launch {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .book-reader__toolbar {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .book-reader__controls {
+    justify-content: flex-start;
+  }
+
+  .book-reader__viewport {
+    min-height: 72vh;
+  }
+
+  .book-reader__stage {
+    min-height: 68vh;
+  }
 }
 
 /* Doodles: decorative images randomly placed around the page */
@@ -837,36 +905,6 @@ main,
 footer.site-footer {
   position: relative;
   z-index: 1;
-}
-  .hero img {
-    height: clamp(210px, 46vw, 300px);
-  }
-
-  .contact-layout {
-    grid-template-columns: 1fr;
-  }
-
-  .book-launch {
-    align-items: flex-start;
-    flex-direction: column;
-  }
-
-  .book-reader__toolbar {
-    align-items: stretch;
-    flex-direction: column;
-  }
-
-  .book-reader__controls {
-    justify-content: flex-start;
-  }
-
-  .book-reader__viewport {
-    min-height: 72vh;
-  }
-
-  .book-reader__stage {
-    min-height: 68vh;
-  }
 }
 
 @media (max-width: 420px) {
