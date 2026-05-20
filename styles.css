@@ -88,7 +88,7 @@ html.has-custom-cursor .back-link {
   pointer-events: none;
   user-select: none;
   -webkit-user-drag: none;
-  z-index: 9999;
+  z-index: 2147483647;
   opacity: 0;
   transform: translate3d(-9999px, -9999px, 0);
   transition: opacity var(--dur-fast) ease;
