@@ -55,6 +55,61 @@ body {
   overflow-x: hidden;
 }
 
+html.has-custom-cursor,
+html.has-custom-cursor body {
+  cursor: none;
+}
+
+html.has-custom-cursor input,
+html.has-custom-cursor textarea,
+html.has-custom-cursor [contenteditable="true"] {
+  cursor: text;
+}
+
+html.has-custom-cursor select,
+html.has-custom-cursor option {
+  cursor: default;
+}
+
+html.has-custom-cursor a[href],
+html.has-custom-cursor button,
+html.has-custom-cursor .tile,
+html.has-custom-cursor .language-toggle,
+html.has-custom-cursor .back-link {
+  cursor: none;
+}
+
+.custom-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 64px;
+  height: auto;
+  pointer-events: none;
+  user-select: none;
+  -webkit-user-drag: none;
+  z-index: 9999;
+  opacity: 0;
+  transform: translate3d(-9999px, -9999px, 0);
+  transition: opacity var(--dur-fast) ease;
+  will-change: transform;
+}
+
+.custom-cursor.is-visible {
+  opacity: 1;
+}
+
+@media (hover: none), (pointer: coarse) {
+  html.has-custom-cursor,
+  html.has-custom-cursor body {
+    cursor: auto;
+  }
+
+  .custom-cursor {
+    display: none;
+  }
+}
+
 .grain {
   display: none;
 }
